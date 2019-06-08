@@ -32,7 +32,16 @@ print('----------------')
 print('There are ' + str(products_count) + ' Products:')
 print('----------------')
 
-for p in products:
+## define a function to sort alphabetically
+
+def sort_by_name(any_product):
+    return any_product['name']
+
+
+sorted_products = sorted(products , key = sort_by_name)
+
+
+for p in sorted_products:
     price_usd = '${0:.2f}'.format(p['price'])
     print('... ' + p['name'] + ' (' + str(price_usd) + ')')
 
