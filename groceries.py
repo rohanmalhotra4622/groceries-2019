@@ -78,7 +78,11 @@ departments.sort()
 for d in departments:
     matching_products = [p for p in products if p['department'] == d]
     matching_products_count = len(matching_products)
-    print(d.title() + ' (' + str(matching_products_count) + ' Products)')
+    if len(matching_products) == 1:
+        print(d.title() + ' (' + str(matching_products_count) + ' Product)')
+    else:
+        print(d.title() + ' (' + str(matching_products_count) + ' Products)')
+
 
 
 
@@ -111,8 +115,3 @@ for d in departments:
 # + Saline Nasal Mist ($16.00)
 # + Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce ($6.99)
 # + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
-
-
-
-
-
