@@ -27,9 +27,12 @@ products = [
 
 #print(products)
 # pprint(products)
+
+# PRODUCTS
+
 products_count = len(products)
 print('----------------')
-print('There are ' + str(products_count) + ' Products:')
+print('There are ' + str(products_count) + ' PRODUCTS:')
 print('----------------')
 
 ## define a function to sort alphabetically
@@ -41,13 +44,42 @@ def sort_by_name(any_product):
 sorted_products = sorted(products , key = sort_by_name)
 
 
-for p in sorted_products:
-    price_usd = '${0:.2f}'.format(p['price'])
-    print('... ' + p['name'] + ' (' + str(price_usd) + ')')
+#for p in sorted_products:
+#    price_usd = '${0:.2f}'.format(p['price'])
+#    print('... ' + p['name'] + ' (' + str(price_usd) + ')')
+
+for i in range(0,len(sorted_products)):
+    print('+ ' + sorted_products[i]['name'] + ' ($' + '{0:.2f}'.format(sorted_products[i]['price']) + ')')
+
+# DEPARTMENTS 
+# can be done two ways
+#departments = []
+#for c in range(0,products_count):
+#    departments.append(products[c]['department'])
+
+#department_count = len(set(departments)) # set function counts unique items
+#print('----------------')
+#print('There are ' +  str(department_count) + ' DEPARTMENTS:')
+#print('----------------')
+
+## or it can be done this way
+departments = []
+for p in products:
+    if p['department'] not in departments:
+        departments.append(p['department'])
+department_count = len(departments)
+print('----------------')
+print('There are ' +  str(department_count) + ' DEPARTMENTS:')
+print('----------------')  
+
+for d in departments:
+    print(d)
 
 
-#for i in range(0,len(products)):
-#    print('+ ' + products[i]['name'] + ' ($' + '{0:.2f}'.format(products[i]['price']) + ')')
+
+
+
+
 
 
 
@@ -74,7 +106,6 @@ for p in sorted_products:
 # + Saline Nasal Mist ($16.00)
 # + Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce ($6.99)
 # + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
-
 
 
 
