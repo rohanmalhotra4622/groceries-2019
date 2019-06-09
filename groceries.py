@@ -75,9 +75,10 @@ print('----------------')
 departments.sort()
 
 
-for d in departments:
-    matching_products = [p for p in products if p['department'] == d]
-    matching_products_count = len(matching_products)
+for d in departments:  # departments is a list which has unique items
+    matching_products = [p for p in products if p['department'] == d]  # creating a list by looping through products and if 'department' matches the item in department list 
+    matching_products_count = len(matching_products)  # here it is counting the number of elements of each list prior
+    #print(matching_products) # if you uncomment this it will clarify it
     if len(matching_products) == 1:
         print(d.title() + ' (' + str(matching_products_count) + ' Product)')
     else:
@@ -115,3 +116,8 @@ for d in departments:
 # + Saline Nasal Mist ($16.00)
 # + Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce ($6.99)
 # + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
+
+
+
+
+
