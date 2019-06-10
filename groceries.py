@@ -1,6 +1,6 @@
 # groceries.py
 
-#from pprint import pprint
+from pprint import pprint
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -26,7 +26,7 @@ products = [
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
 #print(products)
-# pprint(products)
+pprint(products)
 
 # PRODUCTS
 
@@ -47,6 +47,7 @@ sorted_products = sorted(products , key = sort_by_name)
 #for p in sorted_products:
 #    price_usd = '${0:.2f}'.format(p['price'])
 #    print('... ' + p['name'] + ' (' + str(price_usd) + ')')
+
 
 for i in range(0,len(sorted_products)):
     print('+ ' + sorted_products[i]['name'] + ' ($' + '{0:.2f}'.format(sorted_products[i]['price']) + ')')
@@ -84,9 +85,10 @@ for d in departments:  # departments is a list which has unique items
     else:
         print(d.title() + ' (' + str(matching_products_count) + ' Products)')
 
-
-
-
+print('--------------')
+print([p['price'] for p in products if p['department'] == 'snacks'])
+print('--------------')
+print([p['name'] for p in products if p['department'] == 'snacks'])
 
 
 
